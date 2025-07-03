@@ -19,6 +19,7 @@ jobs:
           RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}\n" -X POST \
             -F token=${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }} \
             -F ref=main \
+            -F "variables[TRIGGERED_BY]=github" \
             https://gitlab.com/api/v4/projects/70737971/trigger/pipeline)
 
           echo "GitLab Response:"
