@@ -18,6 +18,6 @@ jobs:
           curl -X POST \
           -F token=${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }} \
           -F ref=main \
-          https://gitlab.com/nandukrishna.mpm/test-website-v2/trigger/pipeline
+          https://gitlab.com/api/v4/projects/70737971/trigger/pipeline
         env:
           GITLAB_PIPELINE_TRIGGER_TOKEN: ${{ secrets.GITLAB_PIPELINE_TRIGGER_TOKEN }}
